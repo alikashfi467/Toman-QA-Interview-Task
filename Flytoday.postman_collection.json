@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "e31f337f-aefa-451e-9d30-a6c16038d16b",
+		"name": "Flytoday",
+		"description": "Test document for Toman's interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41564950"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "false"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhNjE3OWU4LTIxOTUtNGFkMS05MTgxLTYxOTQyZjcwMDQwNiIsInVzZXIiOiI0OmFsaWthc2hmaTQ2N0BnbWFpbC5jb20iLCJlbWFpbCI6ImFsaWthc2hmaTQ2N0BnbWFpbC5jb20iLCJtb2JpbGVfdmVyaWZpZWQiOnRydWUsInZlcmlmeV9mb3JfbG9naW4iOnRydWUsInZlcmlmeV9mb3JfbG9naW4tYXBwIjp0cnVlLCJ2ZXJpZnlfZm9yX29yZGVyIjpmYWxzZSwicHJvZmlsZV9jb21wbGV0ZSI6dHJ1ZSwidWJlcl9lbGlnaWJpbGl0eSI6ZmFsc2UsImp3dF90b2tlbl9pZCI6IjY0MzI0MCIsImxvZ2luX3R5cGUiOiJDcmVkZW50aWFsIiwibmJmIjoxNzQyMDcwNDc0LCJleHAiOjE3NDQ2NjI0NzQsImlhdCI6MTc0MjA3MDQ3NH0.H2h0K04g8EZ0WAi4yadbcZCYtchsyoKc5mO7dcoEmB8"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.flytodayir.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.flytodayir.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-app",
+						"value": "www.flytodayir.com"
+					},
+					{
+						"key": "x-path",
+						"value": "https://www.flytodayir.com/flight/search?departure=thr,1&arrival=bnd,1&departureDate=2025-04-13&returnDate=2025-04-15&adt=1&chd=0&inf=0&cabin=1&isDomestic=true&isAnyWhere=false"
+					},
+					{
+						"key": "x-token",
+						"value": "7539614f57687552324445343033414f4439554362734d754c783843364f367943637557586b39776d77415451626c436579586d654e764a4a304f5533456357"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"pricingSourceType\":0,\"adultCount\":1,\"childCount\":0,\"infantCount\":0,\"travelPreference\":{\"cabinType\":\"Y\",\"maxStopsQuantity\":\"All\",\"airTripType\":\"Return\"},\"originDestinationInformations\":[{\"departureDateTime\":\"2025-04-13\",\"destinationLocationCode\":\"BND\",\"destinationType\":\"City\",\"originLocationCode\":\"THR\",\"originType\":\"City\"},{\"departureDateTime\":\"2025-04-15\",\"destinationLocationCode\":\"THR\",\"destinationType\":\"City\",\"originLocationCode\":\"BND\",\"originType\":\"City\"}],\"isJalali\":true}"
+				},
+				"url": {
+					"raw": "{{base_url}}flight/search",
+					"host": [
+						"{{base_url}}flight"
+					],
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Revalidate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "false"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhNjE3OWU4LTIxOTUtNGFkMS05MTgxLTYxOTQyZjcwMDQwNiIsInVzZXIiOiI0OmFsaWthc2hmaTQ2N0BnbWFpbC5jb20iLCJlbWFpbCI6ImFsaWthc2hmaTQ2N0BnbWFpbC5jb20iLCJtb2JpbGVfdmVyaWZpZWQiOnRydWUsInZlcmlmeV9mb3JfbG9naW4iOnRydWUsInZlcmlmeV9mb3JfbG9naW4tYXBwIjp0cnVlLCJ2ZXJpZnlfZm9yX29yZGVyIjpmYWxzZSwicHJvZmlsZV9jb21wbGV0ZSI6dHJ1ZSwidWJlcl9lbGlnaWJpbGl0eSI6ZmFsc2UsImp3dF90b2tlbl9pZCI6IjY0MzI0MCIsImxvZ2luX3R5cGUiOiJDcmVkZW50aWFsIiwibmJmIjoxNzQyMDcwNDc0LCJleHAiOjE3NDQ2NjI0NzQsImlhdCI6MTc0MjA3MDQ3NH0.H2h0K04g8EZ0WAi4yadbcZCYtchsyoKc5mO7dcoEmB8"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.flytodayir.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.flytodayir.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-app",
+						"value": "www.flytodayir.com"
+					},
+					{
+						"key": "x-path",
+						"value": "https://www.flytodayir.com/flight/book/288800038-6335336465386137366261313434323238633932313763306233623332343461263238322631323137353034313830?dateLang=fa&isDomestic=true"
+					},
+					{
+						"key": "x-token",
+						"value": "7539614f57687552324445343033414f4439554362734d754c783843364f367943637557586b39776d77415451626c436579586d654e764a4a304f5533456357"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"searchId\":288810148,\"fareSourceCode\":\"3765326562663765633231343465616262656534316339366635623630353162263137352631323137353335333632\",\"dateLang\":\"fa\",\"isDomestic\":true}"
+				},
+				"url": {
+					"raw": "{{base_url}}flight/revalidate",
+					"host": [
+						"{{base_url}}flight"
+					],
+					"path": [
+						"revalidate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateways",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "false"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhNjE3OWU4LTIxOTUtNGFkMS05MTgxLTYxOTQyZjcwMDQwNiIsInVzZXIiOiI0OmFsaWthc2hmaTQ2N0BnbWFpbC5jb20iLCJlbWFpbCI6ImFsaWthc2hmaTQ2N0BnbWFpbC5jb20iLCJtb2JpbGVfdmVyaWZpZWQiOnRydWUsInZlcmlmeV9mb3JfbG9naW4iOnRydWUsInZlcmlmeV9mb3JfbG9naW4tYXBwIjp0cnVlLCJ2ZXJpZnlfZm9yX29yZGVyIjpmYWxzZSwicHJvZmlsZV9jb21wbGV0ZSI6dHJ1ZSwidWJlcl9lbGlnaWJpbGl0eSI6ZmFsc2UsImp3dF90b2tlbl9pZCI6IjY0MzI0MCIsImxvZ2luX3R5cGUiOiJDcmVkZW50aWFsIiwibmJmIjoxNzQyMDcwNDc0LCJleHAiOjE3NDQ2NjI0NzQsImlhdCI6MTc0MjA3MDQ3NH0.H2h0K04g8EZ0WAi4yadbcZCYtchsyoKc5mO7dcoEmB8"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.flytodayir.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.flytodayir.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-app",
+						"value": "www.flytodayir.com"
+					},
+					{
+						"key": "x-path",
+						"value": "https://www.flytodayir.com/flight/book/288800038-6335336465386137366261313434323238633932313763306233623332343461263238322631323137353034313830?dateLang=fa&isDomestic=true"
+					},
+					{
+						"key": "x-token",
+						"value": "7539614f57687552324445343033414f4439554362734d754c783843364f367943637557586b39776d77415451626c436579586d654e764a4a304f5533456357"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}Payment/Gateways",
+					"host": [
+						"{{base_url}}Payment"
+					],
+					"path": [
+						"Gateways"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					},
+					{
+						"key": "accept-language",
+						"value": "false"
+					},
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhNjE3OWU4LTIxOTUtNGFkMS05MTgxLTYxOTQyZjcwMDQwNiIsInVzZXIiOiI0OmFsaWthc2hmaTQ2N0BnbWFpbC5jb20iLCJlbWFpbCI6ImFsaWthc2hmaTQ2N0BnbWFpbC5jb20iLCJtb2JpbGVfdmVyaWZpZWQiOnRydWUsInZlcmlmeV9mb3JfbG9naW4iOnRydWUsInZlcmlmeV9mb3JfbG9naW4tYXBwIjp0cnVlLCJ2ZXJpZnlfZm9yX29yZGVyIjpmYWxzZSwicHJvZmlsZV9jb21wbGV0ZSI6dHJ1ZSwidWJlcl9lbGlnaWJpbGl0eSI6ZmFsc2UsImp3dF90b2tlbl9pZCI6IjY0MzI0MCIsImxvZ2luX3R5cGUiOiJDcmVkZW50aWFsIiwibmJmIjoxNzQyMDcwNDc0LCJleHAiOjE3NDQ2NjI0NzQsImlhdCI6MTc0MjA3MDQ3NH0.H2h0K04g8EZ0WAi4yadbcZCYtchsyoKc5mO7dcoEmB8"
+					},
+					{
+						"key": "clientid",
+						"value": "927361969.1742070421"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json"
+					},
+					{
+						"key": "origin",
+						"value": "https://www.flytodayir.com"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://www.flytodayir.com/"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Not(A:Brand\";v=\"99\", \"Google Chrome\";v=\"133\", \"Chromium\";v=\"133\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "cross-site"
+					},
+					{
+						"key": "sessionid",
+						"value": "1742070420"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "x-app",
+						"value": "www.flytodayir.com"
+					},
+					{
+						"key": "x-path",
+						"value": "https://www.flytodayir.com/flight/book/288800038-6335336465386137366261313434323238633932313763306233623332343461263238322631323137353034313830?dateLang=fa&isDomestic=true"
+					},
+					{
+						"key": "x-token",
+						"value": "7539614f57687552324445343033414f4439554362734d754c783843364f367943637557586b39776d77415451626c436579586d654e764a4a304f5533456357"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"travelerInfo\": {\n        \"airTravelers\": [\n            {\n                \"dateOfBirth\": \"1997-08-05\",\n                \"gender\": \"Male\",\n                \"passengerType\": \"Adt\",\n                \"passengerName\": {\n                    \"passengerFirstName\": \"ali\",\n                    \"passengerLastName\": \"kashfi\"\n                },\n                \"passport\": {},\n                \"nationalId\": \"0020274246\",\n                \"nationality\": \"IR\",\n                \"seatPreference\": 0,\n                \"mealPreference\": 0,\n                \"wheelchair\": false,\n                \"nationalityName\": \"ایران\",\n                \"destinationAddress\": \"\"\n            }\n        ],\n        \"phoneNumber\": \"09124439813\",\n        \"email\": \"alikashfi467@gmail.com\"\n    },\n    \"useBalance\": false,\n    \"useCrouseBalance\": false,\n    \"description\": \"\",\n    \"discountCode\": \"\",\n    \"paymentGatewayId\": 30,\n    \"giftCardCodes\": [],\n    \"cancellationGuaranteeId\": null,\n    \"searchId\": 288810148,\n    \"fareSourceCode\": \"3765326562663765633231343465616262656534316339366635623630353162263137352631323137353335333632\",\n    \"isRequestVisa\": false,\n    \"insuranceService\": null\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}flight/book",
+					"host": [
+						"{{base_url}}flight"
+					],
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://api.flytoday.ir/api/V1/",
+			"type": "string"
+		}
+	]
+}
